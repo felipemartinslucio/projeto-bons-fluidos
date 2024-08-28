@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro de Entrada de Produtos</title>
+    <link rel="stylesheet" href="../static/css/styles.css">
+</head>
+<body>
+    <header>
+        <h1>Registro de Entrada de Produtos</h1>
+        <nav>
+            <a href="/">Início</a>
+            <a href="/produtos">Entrada de Produtos</a>
+            <a href="/estoque">Controle de Estoque</a>
+            <a href="/doacoes">Rastreamento de Doações</a>
+            <a href="/dashboard">Dashboard</a>
+            <a href="#" id="logout">Logout</a>
+        </nav>
+    </header>
+    <main>
+        <form id="entradaForm">
+            <label for="tipoProduto">Produto:</label>
+            <input type="text" id="tipoProduto" required>
+            <label for="quantidade">Quantidade:</label>
+            <input type="number" id="quantidade" min="1" required>
+            <label for="dataEntrada">Data de Entrada:</label>
+            <input type="date" id="dataEntrada" required>
+            <button type="submit">Registrar</button>
+            <p id="entradaMessage"></p>
+        </form>
+    </main>
+    <script src="../static/js/scripts.js"></script>
+</body>
+</html>
