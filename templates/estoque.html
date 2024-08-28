@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Controle de Estoque</title>
+    <link rel="stylesheet" href="../static/css/styles.css">
+</head>
+<body>
+    <header>
+        <h1>Controle de Estoque</h1>
+        <nav>
+            <a href="/">Início</a>
+            <a href="/produtos">Entrada de Produtos</a>
+            <a href="/estoque">Controle de Estoque</a>
+            <a href="/doacoes">Rastreamento de Doações</a>
+            <a href="/dashboard">Dashboard</a>
+            <a href="#" id="logout">Logout</a>
+        </nav>
+    </header>
+    <main>
+        <table>
+            <thead>
+                <tr>
+                    <th>Tipo de Produto</th>
+                    <th>Quantidade</th>
+                    <th>Ações</th>
+                </tr>
+            </thead>
+            <tbody id="estoqueTableBody">
+                <!-- Estoque inserido via JS -->
+            </tbody>
+        </table>
+    </main>
+    <script src="../static/js/scripts.js"></script>
+</body>
+</html>

@@ -70,6 +70,21 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    // Página Inicial
+    const welcomeMessage = document.getElementById('welcomeMessage');
+    if (welcomeMessage) {
+        const currentUser = getCurrentUser();
+        if (!currentUser) {
+            window.location.href = '/login';
+        } else {
+            welcomeMessage.textContent = `Olá, ${currentUser.email}!`;
+        }
+
+        document.getElementById('logout').addEventListener('click', function() {
+            logout();
+        });
+    }
+
     // Página de Registro de Produtos
     const entradaForm = document.getElementById('entradaForm');
     if (entradaForm) {
@@ -96,6 +111,46 @@ document.addEventListener('DOMContentLoaded', () => {
             } else {
                 window.location.href = '/login'; 
             }
+        });
+    }
+
+    // Página de Controle de Estoque
+    const estoqueTableBody = document.getElementById('estoqueTableBody');
+    if (estoqueTableBody) {
+        atualizarEstoque();
+    }
+
+    function atualizarEstoque() {
+        const currentUser = getCurrentUser();
+        if (!currentUser || !estoqueTableBody) return;
+
+        estoqueTableBody.innerHTML = '';
+        for (const tipo in currentUser.estoque) {
+            const row = document.createElement('tr');
+            row.innerHTML = `
+                <td>${tipo}</td>
+                <td>${currentUser.estoque[tipo]}</td>
+                <td>
+                    <button class="edit" data-tipo="${tipo}">Editar</button>
+                    <button class="delete" data-tipo="${tipo}">Excluir</button>
+                </td>
+            `;
+            estoqueTableBody.appendChild(row);
+        }
+
+        // Adicionar eventos aos botões de edição e exclusão
+        document.querySelectorAll('.edit').forEach(button => {
+            button.addEventListener('click', function() {
+                const tipo = this.getAttribute('data-tipo');
+                editarProduto(tipo);
+            });
+        });
+
+        document.querySelectorAll('.delete').forEach(button => {
+            button.addEventListener('click', function() {
+                const tipo = this.getAttribute('data-tipo');
+                excluirProduto(tipo);
+            });
         });
     }
 
