@@ -31,6 +31,14 @@ Após realizar a instalação das dependências e acessar o diretório do projet
 **python app.py**
 
 
+## Como utilizar
+
+- Faça seu cadastro;
+- Realize o login com o cadastro feito;
+- Será liberado para cadastrar, editar e excluir produtos e doações;
+- Além de poder acompanhar os gráficos de desempenho do estoque e das doações.
+
+
 ## Autores
 
 - [@felipemartinslucio](https://github.com/felipemartinslucio)
