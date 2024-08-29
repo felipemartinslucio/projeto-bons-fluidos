@@ -29,3 +29,10 @@ Um sistema projetado para apoiar organizações que trabalham para combater a po
 
 Após realizar a instalação das dependências e acessar o diretório do projeto, inicie localmente utilizando o comando:
 **python app.py**
+
+
+## Autores
+
+- [@felipemartinslucio](https://github.com/felipemartinslucio)
+- [@joaoscalice](https://github.com/joaoscalice)
+- [@pedrocarvalho3](https://github.com/pedrocarvalho3)
